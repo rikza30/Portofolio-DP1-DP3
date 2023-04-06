@@ -1,5 +1,4 @@
 from list_function import *
-
 def fungsiInput():
 
     print('<--Selamat Datang-->')
@@ -23,6 +22,9 @@ def fungsiInput():
 
     elif inputan == 4 :
         Hexadesimal()
+
+    elif inputan == 5 :
+        ASCII()
 
     else :
         print('Mohon masukkan angka sesuai dalam menu!!')

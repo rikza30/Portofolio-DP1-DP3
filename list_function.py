@@ -1,62 +1,33 @@
-from prettytable import PrettyTable
-string = input
 def Desimal():
-#    input_string = str(input('Masukan kata atau kalimat Anda : ')) 
-#    decimal_list = [str(ord(x)) for x in input_string]
-#    decimal_string = ''.join(decimal_list)
-#    output_string = ' '.join([decimal_string[i:i+2] for i in range(0, len(decimal_string), 2)])
-#    print("Hasil konversi anda adalah sebagai berikut " + input_string + " diubah menjadi " + output_string)
-
-    # membuat table dan menambah kolom
-    table = PrettyTable(['Kata', 'Nilai Desimal'])
-
-    # input string
-    input_string = str(input('Masukan kata atau kalimat Anda : '))
-
-    # memisahkan setiap kata di string menggunakan fungsi split
-    words = input_string.split()
-
-    # mengkonversi setiap kata menjadi desimal dan membuat row baru di tabel untuk setiap kata
-    for word in words:
-        decimal_value = [str(ord(x)) for x in word]
-        decimal_string = ''.join(decimal_value)
-        table.add_row([word, decimal_string])
-
-    # print table
-    print(table)
+    string = input("Masukkan string : ")
+    desimal = 0
+    for i in range(len(string)):
+        desimal += ord(string[i]) * (256 ** (len(string)-1-i))
+    print("Hasil konversi ke Desimal adalah :", desimal)
 
 def Biner():
-    # input_string = str(input('Masukan kata atau kalimat Anda : ')) 
-    # binary_string = ''.join(format(ord(x), 'b').zfill(8) for x in input_string)
-    # output_string = '_'.join([binary_string[i:i+8] for i in range(0, len(binary_string), 8)])
-    # print(output_string)
-
-    # create table 
-    table = PrettyTable(['Kata', 'Nilai Biner'])
-    
-    # input string
-    input_string = str(input('Masukan kata atau kalimat Anda : '))
-
-    # split word
-    words = input_string.split()
-
-    # looping
-    for word in words:
-        binary_value = [format(ord(x), 'b').zfill(8) for x in word]
-        binary_string = ''.join(binary_value)
-        table.add_row([word, binary_string])
-
-    # print table
-    print(table)
+    string = input("Masukkan string : ")
+    biner = ""
+    for i in range(len(string)):
+        biner += format(ord(string[i]), '08b')
+    print("Hasil konversi ke Biner adalah :", biner)
 
 def Oktal():
-    result = oct(int(string))
-    print("Result in Octal:", result)
+    string = input("Masukkan string : ")
+    oktal = ""
+    for i in range(len(string)):
+        oktal += format(ord(string[i]), '03o')
+    print("Hasil konversi ke Oktal adalah :", oktal)
 
 def Hexadesimal():
-    result = hex(int(string))
-    print("Result in Hexadecimal:", result)
+    string = input("Masukkan string : ")
+    hexa = ""
+    for i in range(len(string)):
+        hexa += format(ord(string[i]), '02X')
+    print("Hasil konversi ke Hexadesimal adalah :", hexa)
 
 def ASCII():
-    result = ' '.join([str(ord(c)) for c in string])
-    print("Result in ASCII:", result)
+    string = input("Masukkan string : ")
+    print("Hasil konversi ke ASCII adalah :")
+    for i in range(len(string)):
+        print(string[i], ":", ord(string[i]))

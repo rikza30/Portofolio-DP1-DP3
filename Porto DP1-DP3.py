@@ -52,15 +52,13 @@ def convert():
     elif inputan == 5 :
         ASCII()
 
-    else :
-        result_label.config(text='Mohon masukkan angka sesuai dalam menu!!')
 
 window = tk.Tk()
 window.title("Konversi String")
-window.geometry("500x350")
+window.geometry("1000x450")
 window.resizable(False, False)
 
-welcome_label = tk.Label(window, text="<--Selamat Datang-->", font=("Arial", 14))
+welcome_label = tk.Label(window, text="Selamat Datang", font=("Montserrat", 14))
 welcome_label.pack(pady=10)
 
 option_label = tk.Label(window, text="Silahkan Pilih Menu Dibawah Ini", font=("Arial", 12))
@@ -79,7 +77,7 @@ hexa_radiobutton.pack()
 ascii_radiobutton = tk.Radiobutton(window, text="ASCII", variable=option_var, value=5)
 ascii_radiobutton.pack()
 
-entry_label = tk.Label(window, text="Masukkan string :")
+entry_label = tk.Label(window, text="Masukkan Angka atau String :")
 entry_label.pack(pady=10)
 entry = tk.Entry(window)
 entry.pack()
@@ -87,7 +85,7 @@ entry.pack()
 convert_button = tk.Button(window, text="Konversi", command=convert)
 convert_button.pack(pady=10)
 
-result_label = tk.Label(window, font=("Arial", 12))
+result_label = tk.Label(window, font=("Montserrat", 12))
 result_label.pack()
 
 window.mainloop()

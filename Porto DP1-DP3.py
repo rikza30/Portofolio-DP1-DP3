@@ -2,10 +2,11 @@ import tkinter as tk
 
 def Desimal():
     string = entry.get()
-    desimal = 0
+    hasil_konversi = ""
     for i in range(len(string)):
-        desimal += ord(string[i]) * (256 ** (len(string)-1-i))
-    result_label.config(text="Hasil konversi ke Desimal adalah : " + str(desimal))
+        desimal = ord(string[i])
+        hasil_konversi += "{} : {}\n".format(string[i], desimal)
+    result_label.config(text="Hasil konversi ke Desimal:\n" + hasil_konversi)
 
 def Biner():
     string = entry.get()
@@ -56,7 +57,7 @@ def convert():
 window = tk.Tk()
 window.title("Konversi String")
 window.geometry("1000x450")
-window.resizable(False, False)
+
 
 welcome_label = tk.Label(window, text="Selamat Datang", font=("Montserrat", 14))
 welcome_label.pack(pady=10)

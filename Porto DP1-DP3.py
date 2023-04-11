@@ -38,19 +38,16 @@ def ASCII():
 
 def convert():
     inputan = option_var.get()
-    if inputan == 1 :
+    string = entry.get()
+    if inputan == 1 and string.isdigit():
         Desimal()
-
-    elif inputan == 2 :
+    elif inputan == 2 and string.isalnum():
         Biner()
-
-    elif inputan == 3 :
+    elif inputan == 3 and string.isalnum():
         Oktal()
-
-    elif inputan == 4 :
+    elif inputan == 4 and string.isalnum():
         Hexadesimal()
-
-    elif inputan == 5 :
+    elif inputan == 5:
         ASCII()
 
 
